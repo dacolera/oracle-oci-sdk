@@ -1,0 +1,31 @@
+{
+  "name": "augusl/oci-php-sdk",
+  "description": "Oracle Cloud Infrastructure for php client sdk",
+  "keywords": [
+    "oracle",
+    "oci",
+    "sdk",
+    "client",
+    "api"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Claus.Lee",
+      "email": "phpvalue@yahoo.com",
+      "homepage": "https://github.com/augusl"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Augusl\\OCI\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.4 || ^8.0 || ^8.1 || ^8.2",
+    "monolog/monolog": "*",
+    "guzzlehttp/guzzle": "*",
+    "hitrov/oci-api-php-request-sign": "^1.2",
+    "ext-json": "*"
+  }
+}
