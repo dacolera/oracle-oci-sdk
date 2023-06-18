@@ -19,7 +19,7 @@ class InstanceAgentConfig extends DataTypes
     /**
      * @return InstanceAgentPluginConfigDetails[]
      */
-    public function getPluginsConfig()
+    public function getPluginsConfig(): array
     {
         return $this->pluginsConfig;
     }

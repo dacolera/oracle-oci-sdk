@@ -50,6 +50,7 @@ class Client
 
     /**
      * @param ClientInterface $httpClient
+     * @return Client
      */
     public function setHttpClient(ClientInterface $httpClient): Client
     {
@@ -81,6 +82,7 @@ class Client
 
     /**
      * @param Signer $signer
+     * @return Client
      */
     public function setSigner(Signer $signer): Client
     {

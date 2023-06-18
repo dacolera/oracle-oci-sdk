@@ -23,17 +23,26 @@ class Core extends Services
 //        'VnicAttachment' => VnicAttachment::class,
     ];
 
+    /**
+     * @return string
+     */
     public function getSubdomainName(): string
     {
         return 'iaas';
     }
 
+    /**
+     * @return string
+     */
     public function getVersion(): string
     {
         return '20160918';
     }
 
-    public function getServiceName()
+    /**
+     * @return string
+     */
+    public function getServiceName(): string
     {
         return 'core';
     }

@@ -6,17 +6,17 @@ use Augusl\OCI\contract\DataTypes;
 
 class CreateVnicDetails extends DataTypes
 {
-    private $assignPrivateDnsRecord;
-    private $assignPublicIp;
-    private $definedTags;
-    private $displayName;
-    private $freeformTags;
-    private $hostnameLabel;
-    private $nsgIds;
-    private $privateIp;
-    private $skipSourceDestCheck;
-    private $subnetId;
-    private $vlanId;
+    protected $assignPrivateDnsRecord;
+    protected $assignPublicIp;
+    protected $definedTags;
+    protected $displayName;
+    protected $freeformTags;
+    protected $hostnameLabel;
+    protected $nsgIds;
+    protected $privateIp;
+    protected $skipSourceDestCheck;
+    protected $subnetId;
+    protected $vlanId;
 
     /**
      * @param mixed $assignPublicIp

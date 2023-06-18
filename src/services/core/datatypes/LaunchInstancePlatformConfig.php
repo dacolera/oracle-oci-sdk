@@ -7,7 +7,10 @@ use Augusl\OCI\contract\DataTypes;
 class LaunchInstancePlatformConfig extends DataTypes
 {
 
-    public function toArray()
+    /**
+     * @return array
+     */
+    public function toArray(): array
     {
 
     }

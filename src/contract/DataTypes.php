@@ -6,6 +6,9 @@ use ReflectionClass;
 
 abstract class DataTypes
 {
+    /**
+     * @return array
+     */
     public function toArray(): array
     {
         $data = [];
