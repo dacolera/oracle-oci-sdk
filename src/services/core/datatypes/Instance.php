@@ -7,64 +7,64 @@ use Augusl\OCI\contract\DataTypes;
 class Instance extends DataTypes
 {
     /** @var InstanceAgentConfig */
-    protected InstanceAgentConfig $agentConfig;
+    private $agentConfig;
     /** @var InstanceAvailabilityConfig */
-    protected InstanceAvailabilityConfig $availabilityConfig;
+    private $availabilityConfig;
     /** @var string */
-    protected string $availabilityDomain;
+    private $availabilityDomain;
     /** @var string */
-    protected string $capacityReservationId;
+    private $capacityReservationId;
     /** @var string */
-    protected string $compartmentId;
+    private $compartmentId;
     /** @var string */
-    protected string $dedicatedVmHostId;
-    protected $definedTags;
+    private $dedicatedVmHostId;
+    private $definedTags;
     /** @var string */
-    protected string $displayName;
+    private $displayName;
     /** @var Metadata */
-    protected Metadata $extendedMetadata;
+    private $extendedMetadata;
     /** @var string */
-    protected string $faultDomain;
+    private $faultDomain;
     /**
      * @var Metadata
      */
-    protected Metadata $freeformTags;
+    private $freeformTags;
     /** @var string */
-    protected string $id;
+    private $id;
     /** @var string */
-    protected string $imageId;
+    private $imageId;
     /** @var InstanceOptions */
-    protected InstanceOptions $instanceOptions;
+    private $instanceOptions;
     /** @var string */
-    protected string $ipxeScript;
+    private $ipxeScript;
     /** @var string */
-    protected string $launchMode;
+    private $launchMode;
     /** @var LaunchOptions */
-    protected LaunchOptions $launchOptions;
+    private $launchOptions;
     /** @var string */
-    protected string $lifecycleState;
+    private $lifecycleState;
     /** @var Metadata */
-    protected Metadata $metadata;
+    private $metadata;
     /** @var PlatformConfig */
-    protected PlatformConfig $platformConfig;
+    private $platformConfig;
     /** @var PreemptibleInstanceConfigDetails */
-    protected PreemptibleInstanceConfigDetails $preemptibleInstanceConfig;
+    private $preemptibleInstanceConfig;
     /** @var string */
-    protected string $region;
+    private $region;
     /** @var string */
-    protected string $shape;
+    private $shape;
     /** @var InstanceShapeConfig */
-    protected InstanceShapeConfig $shapeConfig;
+    private $shapeConfig;
     /** @var InstanceSourceDetails */
-    protected InstanceSourceDetails $sourceDetails;
+    private $sourceDetails;
     /** @var string */
-    protected string $timeCreated;
+    private $timeCreated;
     /** @var string */
-    protected string $timeMaintenanceRebootDue;
+    private $timeMaintenanceRebootDue;
     /** @var array[] */
-    protected array $systemTags;
-    protected $timeStopScheduled;
-    protected $preferredMaintenanceAction;
+    private $systemTags;
+    private $timeStopScheduled;
+    private $preferredMaintenanceAction;
 
     protected const FROM_ARRAY_TEMPLATE = [
         'agentConfig' => InstanceAgentConfig::class,
@@ -82,7 +82,7 @@ class Instance extends DataTypes
     /**
      * @return InstanceAgentConfig
      */
-    public function getAgentConfig(): InstanceAgentConfig
+    public function getAgentConfig()
     {
         return $this->agentConfig;
     }
@@ -90,7 +90,7 @@ class Instance extends DataTypes
     /**
      * @return InstanceAvailabilityConfig
      */
-    public function getAvailabilityConfig(): InstanceAvailabilityConfig
+    public function getAvailabilityConfig()
     {
         return $this->availabilityConfig;
     }
@@ -98,7 +98,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getAvailabilityDomain(): string
+    public function getAvailabilityDomain()
     {
         return $this->availabilityDomain;
     }
@@ -106,7 +106,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getCapacityReservationId(): string
+    public function getCapacityReservationId()
     {
         return $this->capacityReservationId;
     }
@@ -114,7 +114,7 @@ class Instance extends DataTypes
     /**
      * @return LaunchOptions
      */
-    public function getLaunchOptions(): LaunchOptions
+    public function getLaunchOptions()
     {
         return $this->launchOptions;
     }
@@ -122,7 +122,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getCompartmentId(): string
+    public function getCompartmentId()
     {
         return $this->compartmentId;
     }
@@ -130,7 +130,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getDedicatedVmHostId(): string
+    public function getDedicatedVmHostId()
     {
         return $this->dedicatedVmHostId;
     }
@@ -146,7 +146,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getDisplayName(): string
+    public function getDisplayName()
     {
         return $this->displayName;
     }
@@ -154,7 +154,7 @@ class Instance extends DataTypes
     /**
      * @return Metadata
      */
-    public function getExtendedMetadata(): Metadata
+    public function getExtendedMetadata()
     {
         return $this->extendedMetadata;
     }
@@ -162,7 +162,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getFaultDomain(): string
+    public function getFaultDomain()
     {
         return $this->faultDomain;
     }
@@ -170,7 +170,7 @@ class Instance extends DataTypes
     /**
      * @return Metadata
      */
-    public function getFreeformTags(): Metadata
+    public function getFreeformTags()
     {
         return $this->freeformTags;
     }
@@ -178,7 +178,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->id;
     }
@@ -186,7 +186,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getImageId(): string
+    public function getImageId()
     {
         return $this->imageId;
     }
@@ -194,7 +194,7 @@ class Instance extends DataTypes
     /**
      * @return InstanceOptions
      */
-    public function getInstanceOptions(): InstanceOptions
+    public function getInstanceOptions()
     {
         return $this->instanceOptions;
     }
@@ -202,7 +202,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getIpxeScript(): string
+    public function getIpxeScript()
     {
         return $this->ipxeScript;
     }
@@ -210,7 +210,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getLaunchMode(): string
+    public function getLaunchMode()
     {
         return $this->launchMode;
     }
@@ -218,7 +218,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getLifecycleState(): string
+    public function getLifecycleState()
     {
         return $this->lifecycleState;
     }
@@ -226,7 +226,7 @@ class Instance extends DataTypes
     /**
      * @return Metadata
      */
-    public function getMetadata(): Metadata
+    public function getMetadata()
     {
         return $this->metadata;
     }
@@ -234,7 +234,7 @@ class Instance extends DataTypes
     /**
      * @return PlatformConfig
      */
-    public function getPlatformConfig(): PlatformConfig
+    public function getPlatformConfig()
     {
         return $this->platformConfig;
     }
@@ -242,7 +242,7 @@ class Instance extends DataTypes
     /**
      * @return PreemptibleInstanceConfigDetails
      */
-    public function getPreemptibleInstanceConfig(): PreemptibleInstanceConfigDetails
+    public function getPreemptibleInstanceConfig()
     {
         return $this->preemptibleInstanceConfig;
     }
@@ -250,7 +250,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getRegion(): string
+    public function getRegion()
     {
         return $this->region;
     }
@@ -258,7 +258,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getShape(): string
+    public function getShape()
     {
         return $this->shape;
     }
@@ -266,7 +266,7 @@ class Instance extends DataTypes
     /**
      * @return InstanceShapeConfig
      */
-    public function getShapeConfig(): InstanceShapeConfig
+    public function getShapeConfig()
     {
         return $this->shapeConfig;
     }
@@ -274,7 +274,7 @@ class Instance extends DataTypes
     /**
      * @return InstanceSourceDetails
      */
-    public function getSourceDetails(): InstanceSourceDetails
+    public function getSourceDetails()
     {
         return $this->sourceDetails;
     }
@@ -282,7 +282,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getTimeCreated(): string
+    public function getTimeCreated()
     {
         return $this->timeCreated;
     }
@@ -290,7 +290,7 @@ class Instance extends DataTypes
     /**
      * @return string
      */
-    public function getTimeMaintenanceRebootDue(): string
+    public function getTimeMaintenanceRebootDue()
     {
         return $this->timeMaintenanceRebootDue;
     }

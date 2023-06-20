@@ -2,37 +2,29 @@
 
 namespace Augusl\OCI\service;
 
-use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
-use Hitrov\OCI\Exception\PrivateKeyFileNotFoundException;
-use Hitrov\OCI\Exception\SignerValidateException;
-use Hitrov\OCI\Exception\SigningValidationFailedException;
 use Psr\Http\Message\ResponseInterface;
 use Augusl\OCI\contract\Services;
-
+use Augusl\OCI\Exception;
 
 class Resource
 {
 
     /** @var Services $client */
-    protected Services $service;
+    protected $service;
 
     public function __construct(Services $service)
     {
         $this->service = $service;
     }
 
-
     /**
      * @param $name
      * @param $arguments
-     * @return ResponseInterface
-     * @throws PrivateKeyFileNotFoundException
-     * @throws SignerValidateException
-     * @throws SigningValidationFailedException
-     * @throws GuzzleException
+     * @return ResponseInterface | $expectedClass
+     * @throws Exception
      */
-    protected function call($name, $arguments): ResponseInterface
+    protected function call($name, $arguments)
     {
 
         $this->service->getClient()->getLogger()->info(
@@ -83,10 +75,10 @@ class Resource
 
     /**
      * @param string $path
-     * @param array $queryParams
+     * @param array  $queryParams
      * @return array|string|string[]
      */
-    protected function createRequestUri(string $path, array $queryParams = [])
+    protected function createRequestUri($path, $queryParams = [])
     {
         $uri = 'https://{subdomainName}.{region}.{domainName}{path}';
 

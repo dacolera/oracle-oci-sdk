@@ -3,10 +3,6 @@
 namespace Augusl\OCI;
 
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\GuzzleException;
-use Hitrov\OCI\Exception\PrivateKeyFileNotFoundException;
-use Hitrov\OCI\Exception\SignerValidateException;
-use Hitrov\OCI\Exception\SigningValidationFailedException;
 use Hitrov\OCI\Signer;
 use Monolog\Handler\StreamHandler as MonologStreamHandler;
 use Monolog\Logger;
@@ -21,12 +17,12 @@ class Client
     const USER_AGENT_SUFFIX = "Oracle-PHPSDK";
 
     /** @var Signer */
-    private Signer $signer;
-    private ?string $ociTenancyId;
-    private ?string $ociUserId;
-    private ?string $keyFingerPrint;
-    private ?string $privateKeyLocation;
-    private ?string $region;
+    private $signer;
+    private $ociTenancyId;
+    private $ociUserId;
+    private $keyFingerPrint;
+    private $privateKeyLocation;
+    private $region;
     /**
      * @var Logger|LoggerInterface
      */
@@ -44,13 +40,12 @@ class Client
     /**
      * @var $httpClient ClientInterface
      */
-    private ClientInterface $httpClient;
+    private $httpClient;
 
-    protected array $services = [];
+    protected $services = [];
 
     /**
      * @param ClientInterface $httpClient
-     * @return Client
      */
     public function setHttpClient(ClientInterface $httpClient): Client
     {
@@ -82,7 +77,6 @@ class Client
 
     /**
      * @param Signer $signer
-     * @return Client
      */
     public function setSigner(Signer $signer): Client
     {
@@ -147,13 +141,7 @@ class Client
     }
 
 
-    /**
-     * @throws SigningValidationFailedException
-     * @throws SignerValidateException
-     * @throws GuzzleException
-     * @throws PrivateKeyFileNotFoundException
-     */
-    public function request($uri, $method = 'GET', $data = [], $options = []): ResponseInterface
+    public function request($uri, $method = 'GET', $data = [], $options = [])
     {
         $httpClient = $this->getHttpClient();
         ksort($data, SORT_STRING);
@@ -186,10 +174,7 @@ class Client
         return $this->logger;
     }
 
-    /**
-     * @return Logger
-     */
-    protected function createDefaultLogger(): Logger
+    protected function createDefaultLogger()
     {
         $logger = new Logger('oci-api-php-client');
 
@@ -205,19 +190,20 @@ class Client
      *
      * @return string
      */
-    public function getLibraryVersion(): string
+    public function getLibraryVersion()
     {
         return self::LIBVER;
     }
 
-
     /**
-     * @param RequestInterface $request
-     * @param array $options
-     * @return ResponseInterface
-     * @throws GuzzleException
+     * Helper method to execute deferred HTTP requests.
+     *
+     * @param        $request RequestInterface
+     * @param string $expectedClass
+     * @return ResponseInterface of the type of the expected class or Psr\Http\Message\ResponseInterface.
+     * @throws Exception
      */
-    public function execute(RequestInterface $request, array $options = []): ResponseInterface
+    public function execute(RequestInterface $request, $options = [])
     {
         // Oracle-GoSDK/60.0.0 (windows/amd64; go/go1.18beta1)
         $request = $request

@@ -10,23 +10,16 @@ use Augusl\OCI\services\core\instances\responses\GetInstance;
 use Augusl\OCI\services\core\instances\responses\InstanceAction;
 use Augusl\OCI\services\core\instances\responses\LaunchInstance;
 use Augusl\OCI\services\core\instances\responses\ListInstance;
-use GuzzleHttp\Exception\GuzzleException;
-use Hitrov\OCI\Exception\PrivateKeyFileNotFoundException;
-use Hitrov\OCI\Exception\SignerValidateException;
-use Hitrov\OCI\Exception\SigningValidationFailedException;
 
 class Instances extends Resource
 {
-
     /**
      * @param LaunchInstanceDetails $postBody
      * @return LaunchInstance
-     * @throws GuzzleException
-     * @throws PrivateKeyFileNotFoundException
-     * @throws SignerValidateException
-     * @throws SigningValidationFailedException
+     * @throws Exception
+     * @link https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918  /Instance/LaunchInstance
      */
-    public function launchInstance(LaunchInstanceDetails $postBody): LaunchInstance
+    public function launchInstance(LaunchInstanceDetails $postBody)
     {
         if (empty($postBody->getCompartmentId())) {
             $postBody->setCompartmentId($this->service->getClient()->getOciTenancyId());
@@ -46,17 +39,13 @@ class Instances extends Resource
     const InstanceAction_SOFTSTOP = 'SOFTSTOP';
     const InstanceAction_SENDDIAGNOSTICINTERRUPT = 'SENDDIAGNOSTICINTERRUPT';
 
-
     /**
      * @param string $instanceId
      * @param string $action
      * @return InstanceAction
-     * @throws GuzzleException
-     * @throws PrivateKeyFileNotFoundException
-     * @throws SignerValidateException
-     * @throws SigningValidationFailedException
+     * @throws Exception
      */
-    public function instanceAction(string $instanceId, string $action): InstanceAction
+    public function instanceAction(string $instanceId, string $action)
     {
         return new InstanceAction($this->call(__METHOD__, [
             'httpPath' => '/20160918/instances/{instanceId}',
@@ -70,16 +59,12 @@ class Instances extends Resource
         ]));
     }
 
-
     /**
      * @param $instanceId
      * @return GetInstance
-     * @throws GuzzleException
-     * @throws PrivateKeyFileNotFoundException
-     * @throws SignerValidateException
-     * @throws SigningValidationFailedException
+     * @throws Exception
      */
-    public function getInstance($instanceId): GetInstance
+    public function getInstance($instanceId)
     {
         return new GetInstance($this->call(__METHOD__, [
             'httpPath' => '/20160918/instances/{instanceId}',
@@ -90,15 +75,7 @@ class Instances extends Resource
         ]));
     }
 
-    /**
-     * @param array $queryParams
-     * @return ListInstance
-     * @throws GuzzleException
-     * @throws PrivateKeyFileNotFoundException
-     * @throws SignerValidateException
-     * @throws SigningValidationFailedException
-     */
-    public function listInstances(array $queryParams = []): ListInstance
+    public function listInstances($queryParams = [])
     {
         $queryParams['compartmentId'] = $this->service->getClient()->getOciTenancyId();
         return new ListInstance($this->call(__METHOD__, [
@@ -108,15 +85,7 @@ class Instances extends Resource
         ]));
     }
 
-    /**
-     * @param $instanceId
-     * @return DeleteInstance
-     * @throws GuzzleException
-     * @throws PrivateKeyFileNotFoundException
-     * @throws SignerValidateException
-     * @throws SigningValidationFailedException
-     */
-    public function deleteInstance($instanceId): DeleteInstance
+    public function deleteInstance($instanceId)
     {
         return new DeleteInstance($this->call(__METHOD__, [
             'httpPath' => '/20160918/instances/{instanceId}',

@@ -13,7 +13,7 @@ class Metadata extends DataTypes
         $this->items[$key] = $val;
     }
 
-    public function toArray(): array
+    public function toArray()
     {
         return $this->items;
     }

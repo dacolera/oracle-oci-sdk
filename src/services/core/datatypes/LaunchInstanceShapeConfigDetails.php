@@ -14,7 +14,7 @@ class LaunchInstanceShapeConfigDetails extends DataTypes
      * @param mixed $memoryInGBs
      * @return LaunchInstanceShapeConfigDetails
      */
-    public function setMemoryInGBs($memoryInGBs): LaunchInstanceShapeConfigDetails
+    public function setMemoryInGBs($memoryInGBs)
     {
         $this->memoryInGBs = $memoryInGBs;
         return $this;
@@ -24,7 +24,7 @@ class LaunchInstanceShapeConfigDetails extends DataTypes
      * @param mixed $ocpus
      * @return LaunchInstanceShapeConfigDetails
      */
-    public function setOcpus($ocpus): LaunchInstanceShapeConfigDetails
+    public function setOcpus($ocpus)
     {
         $this->ocpus = $ocpus;
         return $this;

@@ -11,13 +11,13 @@ class LaunchInstanceDetails extends DataTypes
      * Type: LaunchInstanceAgentConfigDetails
      * @var LaunchInstanceAgentConfigDetails
      */
-    private LaunchInstanceAgentConfigDetails $agentConfig;
+    private $agentConfig;
     /**
      * Required: no
      * Type: LaunchInstanceAvailabilityConfigDetails
      * @var LaunchInstanceAvailabilityConfigDetails
      */
-    private LaunchInstanceAvailabilityConfigDetails $availabilityConfig;
+    private $availabilityConfig;
     /**
      * availabilityDomain
      * Required: yes </br>
@@ -37,31 +37,31 @@ class LaunchInstanceDetails extends DataTypes
      */
     protected $capacityReservationId;
     /** @var string */
-    private string $compartmentId;
+    private $compartmentId;
     /** @var CreateVnicDetails */
-    private CreateVnicDetails $createVnicDetails;
+    private $createVnicDetails;
     /** @var string */
-    private string $dedicatedVmHostId;
+    private $dedicatedVmHostId;
 
     private $definedTags;
     /** @var string */
-    private string $displayName;
+    private $displayName;
     /** @var array */
-    private array $extendedMetadata;
+    private $extendedMetadata;
     /** @var string */
-    private string $faultDomain;
+    private $faultDomain;
     /** @var array */
-    private array $freeformTags;
+    private $freeformTags;
     /** @var string */
-    private string $hostnameLabel;
+    private $hostnameLabel;
     /** @var string */
-    private string $imageId;
+    private $imageId;
     /** @var InstanceOptions */
-    private InstanceOptions $instanceOptions;
+    private $instanceOptions;
     /** @var string */
-    private string $ipxeScript;
+    private $ipxeScript;
     /** @var boolean */
-    private bool $isPvEncryptionInTransitEnabled;
+    private $isPvEncryptionInTransitEnabled;
     private $launchMode;
     /**
      * ENUM
@@ -73,16 +73,16 @@ class LaunchInstanceDetails extends DataTypes
      */
     private $launchOptions;
     /** @var Metadata */
-    private Metadata $metadata;
+    private $metadata;
     /** @var LaunchInstancePlatformConfig */
-    private LaunchInstancePlatformConfig $platformConfig;
+    private $platformConfig;
     /** @var PreemptibleInstanceConfigDetails */
-    private PreemptibleInstanceConfigDetails $preemptibleInstanceConfig;
+    private $preemptibleInstanceConfig;
     private $shape;
     /** @var LaunchInstanceShapeConfigDetails */
-    private LaunchInstanceShapeConfigDetails $shapeConfig;
+    private $shapeConfig;
     /** @var InstanceSourceDetails */
-    private InstanceSourceDetails $sourceDetails;
+    private $sourceDetails;
     private $subnetId;
 
     /**
@@ -131,7 +131,6 @@ class LaunchInstanceDetails extends DataTypes
 
     /**
      * @param string $availabilityDomain
-     * @return LaunchInstanceDetails
      */
     public function setAvailabilityDomain(string $availabilityDomain): LaunchInstanceDetails
     {
@@ -171,7 +170,7 @@ class LaunchInstanceDetails extends DataTypes
      * @param mixed $definedTags
      * @return LaunchInstanceDetails
      */
-    public function setDefinedTags($definedTags): LaunchInstanceDetails
+    public function setDefinedTags($definedTags)
     {
         $this->definedTags = $definedTags;
         return $this;
@@ -261,7 +260,7 @@ class LaunchInstanceDetails extends DataTypes
      * @param mixed $launchMode
      * @return LaunchInstanceDetails
      */
-    public function setLaunchMode($launchMode): LaunchInstanceDetails
+    public function setLaunchMode($launchMode)
     {
         $this->launchMode = $launchMode;
         return $this;
@@ -271,7 +270,7 @@ class LaunchInstanceDetails extends DataTypes
      * @param $subnetId
      * @return LaunchInstanceDetails
      */
-    public function setSubnetId($subnetId): LaunchInstanceDetails
+    public function setSubnetId($subnetId)
     {
         $this->subnetId = $subnetId;
         return $this;
@@ -311,7 +310,7 @@ class LaunchInstanceDetails extends DataTypes
      * @param string $shape
      * @return LaunchInstanceDetails
      */
-    public function setShape(string $shape): LaunchInstanceDetails
+    public function setShape($shape)
     {
         $this->shape = $shape;
         return $this;
@@ -341,7 +340,7 @@ class LaunchInstanceDetails extends DataTypes
      * @param $launchOptions
      * @return LaunchInstanceDetails
      */
-    public function setLaunchOptions($launchOptions): LaunchInstanceDetails
+    public function setLaunchOptions($launchOptions)
     {
         $this->launchOptions = $launchOptions;
         return $this;
@@ -462,7 +461,7 @@ class LaunchInstanceDetails extends DataTypes
     /**
      * @return array
      */
-    public function getFreeformTags(): array
+    public function getFreeformTags()
     {
         return $this->freeformTags;
     }
@@ -478,7 +477,7 @@ class LaunchInstanceDetails extends DataTypes
     /**
      * @return array
      */
-    public function getExtendedMetadata(): array
+    public function getExtendedMetadata()
     {
         return $this->extendedMetadata;
     }

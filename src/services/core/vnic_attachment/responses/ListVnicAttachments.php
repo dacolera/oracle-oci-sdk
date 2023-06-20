@@ -12,7 +12,7 @@ class ListVnicAttachments extends Response
     /**
      * @return VnicAttachment[]
      */
-    public function getList(): array
+    public function getList()
     {
         $data = $this->getContents();
         $arr = json_decode($data, true);

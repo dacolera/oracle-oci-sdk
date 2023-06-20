@@ -7,9 +7,6 @@ use Augusl\OCI\services\core\datatypes\Instance;
 
 class GetInstance extends Response
 {
-    /**
-     * @return Instance
-     */
     public function getInstance(): Instance
     {
         $data = $this->getContents();

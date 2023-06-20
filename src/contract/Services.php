@@ -7,12 +7,12 @@ use Augusl\OCI\Client;
 abstract class Services
 {
 
-    protected array $services = [];
+    protected $services = [];
 
     /**
      * @var Client
      */
-    protected Client $client;
+    protected $client;
 
     public function __construct(Client $client)
     {
@@ -34,7 +34,7 @@ abstract class Services
     /**
      * @return string
      */
-    public function getDomainName(): string
+    public function getDomainName()
     {
         return 'oraclecloud.com';
     }

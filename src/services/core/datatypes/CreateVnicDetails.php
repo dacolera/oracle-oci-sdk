@@ -6,23 +6,23 @@ use Augusl\OCI\contract\DataTypes;
 
 class CreateVnicDetails extends DataTypes
 {
-    protected $assignPrivateDnsRecord;
-    protected $assignPublicIp;
-    protected $definedTags;
-    protected $displayName;
-    protected $freeformTags;
-    protected $hostnameLabel;
-    protected $nsgIds;
-    protected $privateIp;
-    protected $skipSourceDestCheck;
-    protected $subnetId;
-    protected $vlanId;
+    private $assignPrivateDnsRecord;
+    private $assignPublicIp;
+    private $definedTags;
+    private $displayName;
+    private $freeformTags;
+    private $hostnameLabel;
+    private $nsgIds;
+    private $privateIp;
+    private $skipSourceDestCheck;
+    private $subnetId;
+    private $vlanId;
 
     /**
      * @param mixed $assignPublicIp
      * @return CreateVnicDetails
      */
-    public function setAssignPublicIp($assignPublicIp): CreateVnicDetails
+    public function setAssignPublicIp($assignPublicIp)
     {
         $this->assignPublicIp = $assignPublicIp;
         return $this;
@@ -32,7 +32,7 @@ class CreateVnicDetails extends DataTypes
      * @param mixed $subnetId
      * @return CreateVnicDetails
      */
-    public function setSubnetId($subnetId): CreateVnicDetails
+    public function setSubnetId($subnetId)
     {
         $this->subnetId = $subnetId;
         return $this;

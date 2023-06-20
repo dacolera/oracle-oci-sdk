@@ -6,10 +6,7 @@ use ReflectionClass;
 
 abstract class DataTypes
 {
-    /**
-     * @return array
-     */
-    public function toArray(): array
+    public function toArray()
     {
         $data = [];
         $ref = new ReflectionClass($this);
@@ -23,10 +20,6 @@ abstract class DataTypes
         return $data;
     }
 
-    /**
-     * @param $data
-     * @return array|mixed
-     */
     protected function convObj($data)
     {
         if ($data instanceof DataTypes) {
@@ -80,7 +73,7 @@ abstract class DataTypes
      * @param $data
      * @return array
      */
-    public static function fromIndexArray($data): array
+    public static function fromIndexArray($data)
     {
         $list = [];
         foreach ($data as $item) {

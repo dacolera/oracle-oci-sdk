@@ -10,7 +10,7 @@ class ListInstance extends Response
     /**
      * @return Instance[]
      */
-    public function getList(): array
+    public function getList()
     {
         $content = $this->getContents();
         $arr = json_decode($content, true);

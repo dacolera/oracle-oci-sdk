@@ -12,7 +12,7 @@ abstract class Response
      */
     protected $response;
 
-    protected string $contents;
+    protected $contents;
 
     public function __construct(ResponseInterface $response)
     {
@@ -20,12 +20,12 @@ abstract class Response
         $this->contents = $response->getBody()->getContents();
     }
 
-    public function getStatusCode(): int
+    public function getStatusCode()
     {
         return $this->response->getStatusCode();
     }
 
-    public function getETag(): array
+    public function getETag()
     {
         return $this->response->getHeader('etag');
     }
@@ -39,7 +39,7 @@ abstract class Response
         return $this->response;
     }
 
-    public function getOpcRequestId(): array
+    public function getOpcRequestId()
     {
         return $this->response->getHeader('opc-request-id');
     }

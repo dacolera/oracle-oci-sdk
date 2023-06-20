@@ -8,9 +8,9 @@ use Augusl\OCI\services\core\datatypes\Vnic;
 class GetVnic extends Response
 {
     /**
-     * @return Vnic
+     * @return mixed
      */
-    public function getVnic(): Vnic
+    public function getVnic()
     {
         $data = $this->getContents();
         $arr = json_decode($data, true);

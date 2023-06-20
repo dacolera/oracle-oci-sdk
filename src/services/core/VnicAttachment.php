@@ -5,10 +5,6 @@ namespace Augusl\OCI\services\core;
 use Augusl\OCI\Exception;
 use Augusl\OCI\service\Resource;
 use Augusl\OCI\services\core\vnic_attachment\responses\ListVnicAttachments;
-use GuzzleHttp\Exception\GuzzleException;
-use Hitrov\OCI\Exception\PrivateKeyFileNotFoundException;
-use Hitrov\OCI\Exception\SignerValidateException;
-use Hitrov\OCI\Exception\SigningValidationFailedException;
 
 class VnicAttachment extends Resource
 {
@@ -66,14 +62,11 @@ class VnicAttachment extends Resource
      * Required: no
      * Type: string
      * The OCID of the VNIC.
-     * @throws GuzzleException
-     * @throws PrivateKeyFileNotFoundException
-     * @throws SignerValidateException
-     * @throws SigningValidationFailedException
      * @return ListVnicAttachments
+     * @throws Exception
      * @link https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/VnicAttachment/ListVnicAttachments
      */
-    public function ListVnicAttachments($queryParams): ListVnicAttachments
+    public function ListVnicAttachments($queryParams)
     {
         $queryParams['compartmentId'] = $this->service->getClient()->getOciTenancyId();
         return new ListVnicAttachments($this->call(__METHOD__, [
