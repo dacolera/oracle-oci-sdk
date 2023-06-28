@@ -10,9 +10,9 @@ use Augusl\OCI\services\core\VnicAttachment;
 
 
 /**
- * @property instances      $instances
+ * @property instances $instances
  * @property VnicAttachment $vnicAttachment
- * @property Vnic           $vnic
+ * @property Vnic $vnic
  */
 class Core extends Services
 {
@@ -40,6 +40,7 @@ class Core extends Services
 
     public function __get($name)
     {
+        $name = ucfirst($name);
         if (!isset($this->services[$name])) {
             if (isset(self::SERVICES[$name]) && class_exists(self::SERVICES[$name])) {
                 $className = self::SERVICES[$name];
