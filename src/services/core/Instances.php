@@ -4,8 +4,10 @@ namespace Augusl\OCI\services\core;
 
 use Augusl\OCI\Exception;
 use Augusl\OCI\service\Resource;
+use Augusl\OCI\services\core\datatypes\DetachInstancePoolInstanceDetails;
 use Augusl\OCI\services\core\datatypes\LaunchInstanceDetails;
 use Augusl\OCI\services\core\instances\responses\DeleteInstance;
+use Augusl\OCI\services\core\instances\responses\DetachInstancePoolInstance;
 use Augusl\OCI\services\core\instances\responses\GetInstance;
 use Augusl\OCI\services\core\instances\responses\InstanceAction;
 use Augusl\OCI\services\core\instances\responses\LaunchInstance;
@@ -19,7 +21,7 @@ class Instances extends Resource
      * @throws Exception
      * @link https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918  /Instance/LaunchInstance
      */
-    public function launchInstance(LaunchInstanceDetails $postBody)
+    public function launchInstance(LaunchInstanceDetails $postBody): LaunchInstance
     {
         if (empty($postBody->getCompartmentId())) {
             $postBody->setCompartmentId($this->service->getClient()->getOciTenancyId());
@@ -45,7 +47,7 @@ class Instances extends Resource
      * @return InstanceAction
      * @throws Exception
      */
-    public function instanceAction(string $instanceId, string $action)
+    public function instanceAction(string $instanceId, string $action): InstanceAction
     {
         return new InstanceAction($this->call(__METHOD__, [
             'httpPath' => '/20160918/instances/{instanceId}',
@@ -64,7 +66,7 @@ class Instances extends Resource
      * @return GetInstance
      * @throws Exception
      */
-    public function getInstance($instanceId)
+    public function getInstance($instanceId): GetInstance
     {
         return new GetInstance($this->call(__METHOD__, [
             'httpPath' => '/20160918/instances/{instanceId}',
@@ -75,7 +77,7 @@ class Instances extends Resource
         ]));
     }
 
-    public function listInstances($queryParams = [])
+    public function listInstances($queryParams = []): ListInstance
     {
         $queryParams['compartmentId'] = $this->service->getClient()->getOciTenancyId();
         return new ListInstance($this->call(__METHOD__, [
@@ -85,7 +87,7 @@ class Instances extends Resource
         ]));
     }
 
-    public function deleteInstance($instanceId)
+    public function deleteInstance($instanceId): DeleteInstance
     {
         return new DeleteInstance($this->call(__METHOD__, [
             'httpPath' => '/20160918/instances/{instanceId}',
@@ -93,6 +95,18 @@ class Instances extends Resource
             'pathParams' => [
                 'instanceId' => $instanceId
             ]
+        ]));
+    }
+
+    public function detachInstancePoolInstance(string $instancePoolId, DetachInstancePoolInstanceDetails $postBody): DetachInstancePoolInstance
+    {
+        return new DetachInstancePoolInstance($this->call(__METHOD__, [
+            'httpPath' => '/20160918/instancePools/{instancePoolId}/actions/detachInstance',
+            'httpMethod' => 'POST',
+            'pathParams' => [
+                'instancePoolId' => $instancePoolId,
+            ],
+            'postBody' => $postBody->toArray(),
         ]));
     }
 }
