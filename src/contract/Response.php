@@ -8,7 +8,7 @@ abstract class Response
 {
     /**
      * @var \GuzzleHttp\Psr7\Response
-     * @deprecated
+     *
      */
     protected $response;
 
