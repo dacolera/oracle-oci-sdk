@@ -32,7 +32,6 @@ abstract class Response
 
     /**
      * @return ResponseInterface
-     * @deprecated
      */
     public function getResponse()
     {
