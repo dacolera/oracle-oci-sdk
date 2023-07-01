@@ -5,6 +5,7 @@ namespace Augusl\OCI\services\core;
 use Augusl\OCI\Exception;
 use Augusl\OCI\service\Resource;
 use Augusl\OCI\services\core\datatypes\DetachInstancePoolInstanceDetails;
+use Augusl\OCI\services\core\datatypes\InstancePowerActionDetails;
 use Augusl\OCI\services\core\datatypes\LaunchInstanceDetails;
 use Augusl\OCI\services\core\instances\responses\DeleteInstance;
 use Augusl\OCI\services\core\instances\responses\DetachInstancePoolInstance;
@@ -47,7 +48,7 @@ class Instances extends Resource
      * @return InstanceAction
      * @throws Exception
      */
-    public function instanceAction(string $instanceId, string $action): InstanceAction
+    public function instanceAction(string $instanceId, string $action, InstancePowerActionDetails $postBody): InstanceAction
     {
         return new InstanceAction($this->call(__METHOD__, [
             'httpPath' => '/20160918/instances/{instanceId}',
@@ -57,7 +58,8 @@ class Instances extends Resource
             ],
             'queryParams' => [
                 'action' => $action,
-            ]
+            ],
+            'postBody' => $postBody->toArray(),
         ]));
     }
 
