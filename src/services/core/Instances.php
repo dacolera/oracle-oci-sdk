@@ -81,7 +81,9 @@ class Instances extends Resource
 
     public function listInstances($queryParams = []): ListInstance
     {
-        $queryParams['compartmentId'] = $this->service->getClient()->getOciTenancyId();
+        if (empty($queryParams['compartmentId'])) {
+            $queryParams['compartmentId'] = $this->service->getClient()->getOciTenancyId();
+        }
         return new ListInstance($this->call(__METHOD__, [
             'httpPath' => '/20160918/instances/',
             'httpMethod' => 'GET',

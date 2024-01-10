@@ -68,7 +68,9 @@ class VnicAttachment extends Resource
      */
     public function ListVnicAttachments($queryParams)
     {
-        $queryParams['compartmentId'] = $this->service->getClient()->getOciTenancyId();
+        if (empty($queryParams['compartmentId'])) {
+            $queryParams['compartmentId'] = $this->service->getClient()->getOciTenancyId();
+        }
         return new ListVnicAttachments($this->call(__METHOD__, [
             'httpPath' => '/20160918/vnicAttachments/',
             'queryParams' => $queryParams,
