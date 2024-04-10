@@ -1,5 +1,5 @@
 {
-  "name": "augusl/oci-php-sdk",
+  "name": "dacolera/oci-php-sdk",
   "description": "Oracle Cloud Infrastructure for php client sdk",
   "keywords": [
     "oracle",
@@ -11,21 +11,27 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Claus.Lee",
-      "email": "phpvalue@yahoo.com",
-      "homepage": "https://github.com/augusl"
+      "name": "Jurandir Dacol Junior",
+      "email": "dacolera360@gmail.com",
+      "homepage": "https://github.com/dacolera"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url" : "git@github.com:dacolera/oci-api-php-request-sign.git"
     }
   ],
   "autoload": {
     "psr-4": {
-      "Augusl\\OCI\\": "src/"
+      "Dacolera\\OCI\\": "src/"
     }
   },
   "require": {
-    "php": "^7.4 || ^8.0 || ^8.1 || ^8.2",
+    "php": "^7.3 || ^7.4 || ^8.0 || ^8.1 || ^8.2",
     "monolog/monolog": "*",
     "guzzlehttp/guzzle": "*",
-    "hitrov/oci-api-php-request-sign": "^1.2",
+    "dacolera/oci-api-php-request-sign": "dev-main",
     "ext-json": "*"
   }
 }

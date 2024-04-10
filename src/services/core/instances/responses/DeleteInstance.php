@@ -1,8 +1,8 @@
 <?php
 
-namespace Augusl\OCI\services\core\instances\responses;
+namespace Dacolera\OCI\services\core\instances\responses;
 
-use Augusl\OCI\contract\Response;
+use Dacolera\OCI\contract\Response;
 
 class DeleteInstance extends Response
 {

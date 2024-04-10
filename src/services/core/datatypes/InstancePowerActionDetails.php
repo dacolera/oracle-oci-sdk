@@ -1,12 +1,12 @@
 <?php
 
-namespace Augusl\OCI\services\core\datatypes;
+namespace Dacolera\OCI\services\core\datatypes;
 
-use Augusl\OCI\contract\DataTypes;
+use Dacolera\OCI\contract\DataTypes;
 
 class InstancePowerActionDetails extends DataTypes
 {
-    private string $actionType;
+    private $actionType;
 
     /**
      * @param string $actionType

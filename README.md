@@ -7,7 +7,7 @@ Oracle Cloud Infrastructure REST Api Client.
 
 ## Installation
 
-    composer require augusl/oci-php-sdk
+    composer require dacolera/oci-php-sdk
 
 ## Support services
 
@@ -23,4 +23,4 @@ View directory example
 
 ## Change log
 
-* 2022-03-08 initialization
+* 2024-04-10 initialization

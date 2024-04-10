@@ -1,9 +1,9 @@
 <?php
 
-namespace Augusl\OCI\services\core\vnic\responses;
+namespace Dacolera\OCI\services\core\vnic\responses;
 
-use Augusl\OCI\contract\Response;
-use Augusl\OCI\services\core\datatypes\Vnic;
+use Dacolera\OCI\contract\Response;
+use Dacolera\OCI\services\core\datatypes\Vnic;
 
 class GetVnic extends Response
 {

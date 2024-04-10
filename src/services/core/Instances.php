@@ -1,18 +1,18 @@
 <?php
 
-namespace Augusl\OCI\services\core;
+namespace Dacolera\OCI\services\core;
 
-use Augusl\OCI\Exception;
-use Augusl\OCI\service\Resource;
-use Augusl\OCI\services\core\datatypes\DetachInstancePoolInstanceDetails;
-use Augusl\OCI\services\core\datatypes\InstancePowerActionDetails;
-use Augusl\OCI\services\core\datatypes\LaunchInstanceDetails;
-use Augusl\OCI\services\core\instances\responses\DeleteInstance;
-use Augusl\OCI\services\core\instances\responses\DetachInstancePoolInstance;
-use Augusl\OCI\services\core\instances\responses\GetInstance;
-use Augusl\OCI\services\core\instances\responses\InstanceAction;
-use Augusl\OCI\services\core\instances\responses\LaunchInstance;
-use Augusl\OCI\services\core\instances\responses\ListInstance;
+use Dacolera\OCI\Exception;
+use Dacolera\OCI\service\Resource;
+use Dacolera\OCI\services\core\datatypes\DetachInstancePoolInstanceDetails;
+use Dacolera\OCI\services\core\datatypes\InstancePowerActionDetails;
+use Dacolera\OCI\services\core\datatypes\LaunchInstanceDetails;
+use Dacolera\OCI\services\core\instances\responses\DeleteInstance;
+use Dacolera\OCI\services\core\instances\responses\DetachInstancePoolInstance;
+use Dacolera\OCI\services\core\instances\responses\GetInstance;
+use Dacolera\OCI\services\core\instances\responses\InstanceAction;
+use Dacolera\OCI\services\core\instances\responses\LaunchInstance;
+use Dacolera\OCI\services\core\instances\responses\ListInstance;
 
 class Instances extends Resource
 {

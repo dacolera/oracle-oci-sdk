@@ -1,6 +1,6 @@
 <?php
 
-namespace Augusl\OCI\services\core\datatypes;
+namespace Dacolera\OCI\services\core\datatypes;
 
 class LaunchInstanceAvailabilityConfigDetails
 {

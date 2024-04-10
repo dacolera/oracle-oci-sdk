@@ -1,6 +1,6 @@
 <?php
 
-namespace Augusl\OCI;
+namespace Dacolera\OCI;
 
 class Exception extends \Exception
 {

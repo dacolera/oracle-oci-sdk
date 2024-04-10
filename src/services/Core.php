@@ -1,12 +1,12 @@
 <?php
 
-namespace Augusl\OCI\services;
+namespace Dacolera\OCI\services;
 
-use Augusl\OCI\contract\Services;
-use Augusl\OCI\Exception;
-use Augusl\OCI\services\core\Instances;
-use Augusl\OCI\services\core\Vnic;
-use Augusl\OCI\services\core\VnicAttachment;
+use Dacolera\OCI\contract\Services;
+use Dacolera\OCI\Exception;
+use Dacolera\OCI\services\core\Instances;
+use Dacolera\OCI\services\core\Vnic;
+use Dacolera\OCI\services\core\VnicAttachment;
 
 
 /**

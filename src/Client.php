@@ -1,8 +1,9 @@
 <?php
 
-namespace Augusl\OCI;
+namespace Dacolera\OCI;
 
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use Hitrov\OCI\Signer;
 use Monolog\Handler\StreamHandler as MonologStreamHandler;
 use Monolog\Logger;
@@ -196,12 +197,10 @@ class Client
     }
 
     /**
-     * Helper method to execute deferred HTTP requests.
-     *
-     * @param        $request RequestInterface
-     * @param string $expectedClass
-     * @return ResponseInterface of the type of the expected class or Psr\Http\Message\ResponseInterface.
-     * @throws Exception
+     * @param RequestInterface $request
+     * @param $options
+     * @return ResponseInterface
+     * @throws GuzzleException
      */
     public function execute(RequestInterface $request, $options = [])
     {

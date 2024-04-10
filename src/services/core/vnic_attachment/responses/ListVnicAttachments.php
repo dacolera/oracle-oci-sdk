@@ -1,9 +1,9 @@
 <?php
 
-namespace Augusl\OCI\services\core\vnic_attachment\responses;
+namespace Dacolera\OCI\services\core\vnic_attachment\responses;
 
-use Augusl\OCI\contract\Response;
-use Augusl\OCI\services\core\datatypes\VnicAttachment;
+use Dacolera\OCI\contract\Response;
+use Dacolera\OCI\services\core\datatypes\VnicAttachment;
 
 class ListVnicAttachments extends Response
 {

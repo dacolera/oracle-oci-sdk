@@ -1,8 +1,8 @@
 <?php
 
-namespace Augusl\OCI\contract;
+namespace Dacolera\OCI\contract;
 
-use Augusl\OCI\Client;
+use Dacolera\OCI\Client;
 
 abstract class Services
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Augusl\OCI\services\core;
+namespace Dacolera\OCI\services\core;
 
-use Augusl\OCI\Exception;
-use Augusl\OCI\service\Resource;
-use Augusl\OCI\services\core\vnic_attachment\responses\ListVnicAttachments;
+use Dacolera\OCI\Exception;
+use Dacolera\OCI\service\Resource;
+use Dacolera\OCI\services\core\vnic_attachment\responses\ListVnicAttachments;
 
 class VnicAttachment extends Resource
 {

@@ -1,17 +1,17 @@
 <?php
 
-namespace Augusl\OCI\services\core\datatypes;
+namespace Dacolera\OCI\services\core\datatypes;
 
-use Augusl\OCI\contract\DataTypes;
+use Dacolera\OCI\contract\DataTypes;
 
 class DetachInstancePoolInstanceDetails extends DataTypes
 {
 
-    private string $instanceId;
+    private  $instanceId;
 
-    private bool $isAutoTerminate;
+    private  $isAutoTerminate;
 
-    private bool $isDecrementSize;
+    private  $isDecrementSize;
 
     /**
      * @param string $instanceId

@@ -1,6 +1,6 @@
 <?php
 
-namespace Augusl\OCI\contract;
+namespace Dacolera\OCI\contract;
 
 use ReflectionClass;
 

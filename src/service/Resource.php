@@ -1,11 +1,11 @@
 <?php
 
-namespace Augusl\OCI\service;
+namespace Dacolera\OCI\service;
 
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\ResponseInterface;
-use Augusl\OCI\contract\Services;
-use Augusl\OCI\Exception;
+use Dacolera\OCI\contract\Services;
+use Dacolera\OCI\Exception;
 
 class Resource
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Augusl\OCI\services\core\instances\responses;
+namespace Dacolera\OCI\services\core\instances\responses;
 
-use Augusl\OCI\contract\Response;
-use Augusl\OCI\services\core\datatypes\Instance;
+use Dacolera\OCI\contract\Response;
+use Dacolera\OCI\services\core\datatypes\Instance;
 
 class GetInstance extends Response
 {
