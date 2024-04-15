@@ -28,7 +28,7 @@
     }
   },
   "require": {
-    "php": "^7.3 || ^7.4 || ^8.0 || ^8.1 || ^8.2",
+    "php": "^7.1 || ^7.3 || ^7.4 || ^8.0 || ^8.1 || ^8.2",
     "monolog/monolog": "*",
     "guzzlehttp/guzzle": "*",
     "dacolera/oci-api-php-request-sign": "dev-main",
