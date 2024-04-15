@@ -1,5 +1,5 @@
 {
-  "name": "dacolera/oci-php-sdk",
+  "name": "dacolera/oracle-oci-sdk",
   "description": "Oracle Cloud Infrastructure for php client sdk",
   "keywords": [
     "oracle",
