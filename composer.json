@@ -33,5 +33,6 @@
     "guzzlehttp/guzzle": "*",
     "dacolera/oci-api-php-request-sign": "dev-main",
     "ext-json": "*"
-  }
+  },
+  "minimum-stability": "dev"
 }
