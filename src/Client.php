@@ -4,7 +4,6 @@ namespace Dacolera\OCI;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
-use Hitrov\OCI\Signer;
 use Monolog\Handler\StreamHandler as MonologStreamHandler;
 use Monolog\Logger;
 use Psr\Http\Message\RequestInterface;
