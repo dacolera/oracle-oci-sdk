@@ -17,4 +17,6 @@ class InstanceShapeConfig extends DataTypes
     private $networkingBandwidthInGbps;
     private $ocpus;
     private $processorDescription;
+    private $resourceManagement;
+    private $vcpus;
 }
