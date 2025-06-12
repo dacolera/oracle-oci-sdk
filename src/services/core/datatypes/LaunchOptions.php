@@ -12,4 +12,5 @@ class LaunchOptions extends DataTypes
     private $isPvEncryptionInTransitEnabled;
     private $networkType;
     private $remoteDataVolumeType;
+    private $isEncryptionInTransitEnabled;
 }
