@@ -66,6 +66,16 @@ class Instance extends DataTypes
     private $timeStopScheduled;
     private $preferredMaintenanceAction;
 
+    // new attributes for php 8.3
+    private $isCrossNumaNode
+    private $instanceConfigurationId
+    private $licensingConfigs
+    private $securityAttributes
+    private $securityAttributesState
+    private $clusterPlacementGroupId
+    private $placementConstraintDetails
+    private $computeHostGroupId
+
     protected const FROM_ARRAY_TEMPLATE = [
         'agentConfig' => InstanceAgentConfig::class,
         'availabilityConfig' => InstanceAvailabilityConfig::class,
