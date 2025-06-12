@@ -12,6 +12,7 @@ class InstanceSourceDetails extends DataTypes
     private $imageId;
     private $kmsKeyId;
     private $bootVolumeVpusPerGB;
+    private $instanceSourceImageFilterDetails;
 
     /**
      * @return mixed
