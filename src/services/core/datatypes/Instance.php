@@ -67,14 +67,14 @@ class Instance extends DataTypes
     private $preferredMaintenanceAction;
 
     // new attributes for php 8.3
-    private $isCrossNumaNode
-    private $instanceConfigurationId
-    private $licensingConfigs
-    private $securityAttributes
-    private $securityAttributesState
-    private $clusterPlacementGroupId
-    private $placementConstraintDetails
-    private $computeHostGroupId
+    private $isCrossNumaNode;
+    private $instanceConfigurationId;
+    private $licensingConfigs;
+    private $securityAttributes;
+    private $securityAttributesState;
+    private $clusterPlacementGroupId;
+    private $placementConstraintDetails;
+    private $computeHostGroupId;
 
     protected const FROM_ARRAY_TEMPLATE = [
         'agentConfig' => InstanceAgentConfig::class,
